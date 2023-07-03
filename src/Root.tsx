@@ -21,10 +21,17 @@ export const RemotionRoot: React.FC = () => {
 					titleText:
 						'#234 – Money, Kids, and Choosing Your Market with Justin Jackson of Transistor.fm',
 					titleColor: 'rgba(251, 176, 14, 0.93)',
-					waveColor: '#ffae00',
+					waveColor: 'rgba(251, 176, 14, 0.93)',
 					transcriptionColor: 'rgba(255, 255, 255, 0.93)',
 					audioOffsetInFrames: 207,
 					source: staticFile('subtitles.srt'),
+					durationInSeconds: 28,
+				}}
+				calculateMetadata={async ({ props }) => {
+					return {
+						durationInFrames: props.durationInSeconds * fps,
+						props,
+					};
 				}}
 			/>
 		</>

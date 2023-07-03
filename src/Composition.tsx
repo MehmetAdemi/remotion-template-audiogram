@@ -21,6 +21,9 @@ export const AudioGramSchema = z.object({
 	titleColor: zColor(),
 	waveColor: zColor(),
 	transcriptionColor: zColor(),
+	audioOffsetInFrames: z.number(),
+	source: z.string(),
+	durationInSeconds: z.number().step(0.5).min(1),
 });
 
 type MyCompSchemaType = z.infer<typeof AudioGramSchema>;
